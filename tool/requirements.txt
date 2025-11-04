@@ -1,0 +1,5 @@
+requests
+colorama
+streamlit
+pandas
+# openai (əgər AI üçün istifadə edirsinizsə)

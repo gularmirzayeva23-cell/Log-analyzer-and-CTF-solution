@@ -1,0 +1,6 @@
+# requirements.txt
+streamlit
+flask
+requests
+pandas
+colorama

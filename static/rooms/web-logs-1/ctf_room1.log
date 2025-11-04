@@ -1,0 +1,21 @@
+203.0.113.10 - - [01/Nov/2025:14:39:42 +0000] "GET /index.html HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+198.51.100.58 - - [01/Nov/2025:15:34:07 +0000] "POST /api/status HTTP/1.1" 200 345 "-" "curl/7.68"
+198.51.100.224 - - [01/Nov/2025:14:47:11 +0000] "POST /login HTTP/1.1" 200 512 "-" "Mozilla/5.0"
+203.0.113.249 - - [01/Nov/2025:15:16:04 +0000] "POST /assets/upload HTTP/1.1" 200 2048 "-" "python-requests/2.28"
+203.0.113.13 - - [01/Nov/2025:14:57:37 +0000] "GET /index.html HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+
+# ===== suspicious starts here =====
+5.135.75.243 - - [01/Nov/2025:15:03:44 +0000] "GET /exfil/backup-2025-10-31.tar.gz HTTP/1.1" 200 1048576 "-" "dirb/2.22"
+14.103.135.94 - - [01/Nov/2025:15:34:07 +0000] "GET /admin/ HTTP/1.1" 200 1024 "-" "dirb/2.22"
+14.103.172.199 - - [01/Nov/2025:14:47:11 +0000] "GET /reports/monthly.pdf HTTP/1.1" 200 20480 "-" "dirb/2.22"
+14.152.91.34 - - [01/Nov/2025:15:16:04 +0000] "GET /drop/creds-drop.txt HTTP/1.1" 200 512 "-" "Mozilla/5.0"
+23.147.8.240 - - [01/Nov/2025:14:57:37 +0000] "GET /admin/ HTTP/1.1" 200 4096 "-" "dirb/2.22"
+23.147.8.240 - - [01/Nov/2025:15:00:00 +0000] "GET /nmap/scan.txt HTTP/1.1" 200 900 "-" "nmap"
+27.79.5.90 - - [01/Nov/2025:15:04:03 +0000] "GET /wp-login.php HTTP/1.1" 404 203 "-" "dirb/2.22"
+27.79.6.242 - - [01/Nov/2025:15:04:44 +0000] "GET /phpmyadmin HTTP/1.1" 403 98 "-" "dirb/2.22"
+20.121.70.44 - - [01/Nov/2025:15:10:00 +0000] "GET /probe?b64=QkVBQ09OLU9L HTTP/1.1" 200 64 "-" "Mozilla/5.0"
+# ==== notes for instructor ====
+# 14.152.91.34 — VT detections: 9 vendors, AbuseIPDB: 100%
+# 23.147.8.240 — scanner used: dirb + nmap
+# 5.135.75.243 — OVH SAS — exfil of backup-2025-10-31.tar.gz
+# Chinese IPs overall (suspicious): 14.103.135.94, 14.103.172.199, 14.152.91.34, 27.79.5.90, 27.79.6.242 = 5
